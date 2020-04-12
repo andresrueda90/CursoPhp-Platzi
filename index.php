@@ -1,5 +1,7 @@
 <?php
-include('jobs.php');
+
+require_once('jobs.php');
+
 $name = 'Hector Benitez';
 $limitMonths = 2000;
 
@@ -25,7 +27,7 @@ $limitMonths = 2000;
   <div class="container">
     <div id="resume-header" class="row">
       <div class="col-3">
-        <img id="profile-picture" src="https://ui-avatars.com/api/?name=Andres+Rueda&size=255" alt="">
+        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
       </div>
       <div class="col">
         <h1><?php echo $name; ?></h1>
@@ -56,23 +58,31 @@ $limitMonths = 2000;
             $totalMonths = 0;
             for($idx = 0;$idx < count($jobs); $idx++) {
               // $totalMonths = $totalMonths + $jobs[$idx]['months'];
-              $totalMonths += $jobs[$idx]['months'];
+              $totalMonths += $jobs[$idx]->months;
               if($totalMonths > $limitMonths) {
                 break;
               }
 
-              printJob($jobs[$idx]);
+              printElement($jobs[$idx]);
             }
             ?>
           </ul>
         </div>
         <div>
             <h3 class="border-bottom-gray">Projects</h3>
+            <ul>
+            <?php
+            for($idx = 0;$idx < count($projects); $idx++) {
+              printElement($projects[$idx]);
+            }
+            ?>
+          </ul>
+
             <div class="project">
                 <h5>Project X</h5>
                 <div class="row">
                     <div class="col-3">
-                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=Andres+Rueda&size=255" alt="">
+                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
                       </div>
                       <div class="col">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
@@ -87,7 +97,7 @@ $limitMonths = 2000;
                 <h5>Project X</h5>
                 <div class="row">
                     <div class="col-3">
-                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=Andres+Rueda&size=255" alt="">
+                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
                       </div>
                       <div class="col">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
