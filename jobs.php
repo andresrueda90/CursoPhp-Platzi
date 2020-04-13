@@ -2,11 +2,11 @@
 
 require 'app/Models/Job.php';
 require 'app/Models/Project.php';
-require_once 'app/Models/Printable.php';
+require_once 'vendor/autoload.php';
 
 require 'lib1/Project.php';
 
-use App\Models\{Job, Project};
+use App\Models\{Job, Project,Printable};
 
 $job1 = new Job('PHP Developer', 'This is an awesome job!!!');
 $job1->months = 16;
@@ -31,7 +31,7 @@ $projects = [
     $project1
 ];
   
-function printElement(Printable $job) {
+function printElement($job) {
     if($job->visible == false) {
       return;
     }
