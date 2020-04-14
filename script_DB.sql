@@ -18,3 +18,4 @@ CREATE TABLE`cursophp`.`jobs` (
 
   ALTER TABLE `jobs` ADD `created_at` DATETIME NOT NULL AFTER `months`, ADD `updated_at` DATETIME NOT NULL AFTER `created_at`;
   ALTER TABLE `proyects` ADD `created_at` DATETIME NOT NULL AFTER `months`, ADD `updated_at` DATETIME NOT NULL AFTER `created_at`;
+  ALTER TABLE `jobs` ADD `deleted_at` DATETIME NOT NULL AFTER `updated_at`;
