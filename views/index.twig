@@ -3,16 +3,16 @@
 {% block content %}
   <div id="resume-header" class="row">
       <div class="col-3">
-        <img id="profile-picture" src="https://ui-avatars.com/api/?name=Andres+Rueda&size=255" alt="">
+        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
       </div>
       <div class="col">
         <h1>{{ name }}</h1>
         <h2>PHP Developer</h2>
         <ul>
-          <li>Mail: andresrueda90@mail.com</li>
+          <li>Mail: hector@mail.com</li>
           <li>Phone: 1234567890</li>
-          <li>GitHub: <a href="https://github.com/andresrueda90" target="_blank">@andresrueda90</a></li>
-          <li>Twitter: <a href="https://twitter.com/andresrueda90" target="_blank">@andresrueda90</a></li>
+          <li>LinkedIn: https://linkedin.com</li>
+          <li>Twitter: @hectorbenitez</li>
         </ul>
       </div>
     </div>
@@ -29,30 +29,30 @@
       <div class="col">
         <div>
           <h3 class="border-bottom-gray" >Work Experience</h3>
+          <ul>
             {% for job in jobs %}
-              <div class="row work-position">
-                  <div class="col-3">
-                      <img src="{{ job.getImage(job.title) }}" alt="" style="max-width: 100%">
-                  </div>
-                  <div class="col">
-                      <h5>{{ job.title }}</h5>
-                      <p>{{ job.months }} months</p>
-                      <p>{{ job.description }}</p>
-                  </div>
-              </div>
+              <li class="work-position">
+                <h5>{{ job.title }}</h5>
+                <p>{{ job.description }}</p>
+              </li>
             {% endfor %}
+          </ul>
         </div>
-        <br>
         <div>
             <h3 class="border-bottom-gray">Projects</h3>
             <ul>
+            <?php
+            for($idx = 0;$idx < count($projects); $idx++) {
+              printElement($projects[$idx]);
+            }
+            ?>
           </ul>
-           <br>
+
             <div class="project">
                 <h5>Project X</h5>
                 <div class="row">
                     <div class="col-3">
-                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=P+J&size=255" alt=""  style="max-width: 100%">
+                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
                       </div>
                       <div class="col">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
@@ -63,12 +63,11 @@
                       </div>
                 </div>
             </div>
-            <br>
             <div class="project">
                 <h5>Project X</h5>
                 <div class="row">
                     <div class="col-3">
-                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=P+J&size=255" alt=""  style="max-width: 100%">
+                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
                       </div>
                       <div class="col">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
@@ -106,6 +105,7 @@
     </div>
     <div id="resume-footer" class="row">
       <div class="col">
+          Designed by @hectorbenitez
       </div>
     </div>
 {% endblock %}
