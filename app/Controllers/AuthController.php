@@ -19,7 +19,7 @@ class AuthController extends BaseController {
         if($user) {
             if (password_verify($postData['password'], $user->password)) {
                 $_SESSION['userId'] = $user->id;
-                return new RedirectResponse('/admin');
+                return new RedirectResponse('admin');
             } else {
                 $responseMessage = 'Bad credentials';
             }
@@ -34,6 +34,6 @@ class AuthController extends BaseController {
 
     public function getLogout() {
         unset($_SESSION['userId']);
-        return new RedirectResponse('/login');
+        return new RedirectResponse('login');
     }
 }
